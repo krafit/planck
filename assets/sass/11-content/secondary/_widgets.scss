@@ -1,13 +1,33 @@
 .widget {
-	margin: 0 0 1.5em;
-
+	line-height: 1.4rem;
 	/* Make sure select elements fit in widgets. */
 	select {
 		max-width: 100%;
 	}
 }
 
-/* Search widget. */
-.widget_search .search-submit {
-	display: none;
+h2.widget-title {
+	text-transform: uppercase;
+	text-align: left;
+	color: $color__primary;
+	@include font-size(1.0);
+	font-weight: 600;
+	line-height: 1rem;
+	margin-bottom: .7em;
+	letter-spacing: .5px;
 }
+
+h2.widget-title+div {
+	background-color: white;
+	padding: 1em 0.7em;
+	text-align: left;
+	border-top: solid $color__border 5px;
+	@include font-size(0.935);
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		font-weight: bold;
+	}
+}
+

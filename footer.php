@@ -16,7 +16,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="wrap">
 			<div class="site-info">
-				&copy; 2015 - <a href="http://wpmeetups.de/impressum">Impressum</a>
+				&copy; 2015 <a href="http://wpmeetups.de/impressum">Impressum</a> | <a href="http://wpmeetups.de/datenschutz">Datenschutz</a>
 			</div><!-- .site-info -->
 		</div>
 	</footer><!-- #colophon -->
