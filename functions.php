@@ -101,7 +101,7 @@ add_action( 'widgets_init', 'krafit_planck_widgets_init' );
 function krafit_planck_scripts() {
 	wp_enqueue_style( 'krafit_planck-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'krafit_planck-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,300,600' );
+	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,300,600' );
 
 	wp_enqueue_style( 'dashicons' );
 	
