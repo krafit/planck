@@ -1,0 +1,31 @@
+.meetup-meta, ul.ecs-event-list {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+.ecs-event-list {
+	
+}
+	li.ecs-event {
+		padding: .5em;
+		color: white;
+		.entry-title a {
+			color: white;
+		}
+		h4 {
+			margin: 0;
+		}
+		.time {
+			font-weight: 300;
+		}
+	}
+
+ul.ecs-event-list {
+		li {
+			background-color: #ccc;
+		}
+		li:even {
+			background-color: blue;
+		}
+}
