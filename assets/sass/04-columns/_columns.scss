@@ -25,6 +25,9 @@
 		.two-thirds + .third {
 			margin-right: 0;
 		}
+		.third + .two-thirds {
+			margin-right: 0;
+		}
 		
 	.column.half {
 	  	width: 48.75%; 

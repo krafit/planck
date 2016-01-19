@@ -4,6 +4,10 @@
 	select {
 		max-width: 100%;
 	}
+	li {
+		padding: 0 0 10px;
+		font-weight: 600;
+	}
 }
 
 h2.widget-title {
@@ -13,7 +17,7 @@ h2.widget-title {
 	@include font-size(1.0);
 	font-weight: 600;
 	line-height: 1rem;
-	margin-bottom: .7em;
+	margin-bottom: .5em;
 	letter-spacing: .5px;
 }
 
@@ -21,13 +25,38 @@ h2.widget-title+div {
 	background-color: white;
 	padding: 1em 0.7em;
 	text-align: left;
-	border-top: solid $color__border 5px;
+	border-top: solid $color__footer-border 5px;
 	@include font-size(0.935);
 	ul {
 		list-style: none;
 		margin: 0;
 		padding: 0;
 		font-weight: bold;
+	}
+}
+
+.cal-widget {
+	ol {
+		list-style: none;
+		padding: 0;
+		li {
+			margin: 0;
+			line-height: 1.4;
+		}
+	}
+}
+
+.wpmg_twitter {
+	margin-top: 2.25em;
+	.dashicons-twitter {
+		font-size: 300%; 
+		width: 0;
+		color: #4da6d0;
+	}
+	.widget-content {
+		display: inline-block;
+		margin: .8em 0 0 3em;
+		text-align: left;
 	}
 }
 

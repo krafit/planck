@@ -1,34 +1,41 @@
 $color__primary: #21759b;
 $color__secondary: #282828;
 $color__tertiary: #fff;
+$color__generic__black: #000;
 
 $color__primary__light: lighten( $color__primary, 3% );
 $color__secondary__light: lighten( $color__secondary, 3% );
 $color__primary__dark: darken( $color__primary, 3% );
 $color__secondary__dark: darken( $color__secondary, 3% );
+$color__soft_black: lighten( $color__generic__black, 80% );
 
 
 $color__background-body: $color__secondary;
 $color__background-header: $color__primary; 
 $color__background-screen: #f1f1f1;
-$color__background-hr: #ccc; //
+$color__background-hr: #ccc;
 $color__background-button: #e6e6e6; //
 $color__background-pre: #eee; //
 $color__background-ins: #fff9c0; //
+$color__background-meetup-sidebar: #f1f1f1;
 $color__background-secondary: #f1f1f1;
 $color__background-footer: #f1f1f1; 
 
 $color__text-screen: #21759b; //
 $color__text-input: #666; //
 $color__text-input-focus: #111; //
-$color__link: $color__secondary; //
-$color__link-visited: $color__secondary; //
-$color__link-hover: $color__secondary__dark; //
+$color__link: $color__primary;
+$color__link-visited: $color__primary;
+$color__link-hover: $color__secondary__dark;
 $color__text-header: $color__tertiary;
 $color__text-header_hover: $color__tertiary;
 $color__text-main: #777;
 $color__text-headline: #303030;
+$color__text-pre-headline: #4ca6cf;
+$color__text-meetup-sidebar: #7c7c7c;
 $color__text-footer: #fff;
 
 $color__border-input: #ccc; //
 $color__border-abbr: #666; //
+$color__border: $color__soft_black;
+$color__footer-border: #ddd;

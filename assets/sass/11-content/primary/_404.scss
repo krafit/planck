@@ -1,23 +1,6 @@
 .error-404 {
 	text-align: center;
-	input[type="search"],
-	input[type="submit"] {
-		display: inline-block;
-		width: 100%;
-		margin-bottom: .5em;
-	}
-}
-
-@include responsive(small-screens) {
-	.error-404 {	
-		input[type="search"] {
-			width: 40%;
-			max-width: 400px;
-		}
-		input[type="submit"] {
-			display: inline-block;
-			width: 10%;
-			max-width: 170px;
-		}	
-	}
+	background-color: $color__background-meetup-sidebar;
+	padding: 3.7rem;
+	border-top: 6px $color__border solid;
 }

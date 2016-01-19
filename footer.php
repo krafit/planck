@@ -15,8 +15,11 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="wrap">
+
+<?php get_sidebar(); ?>
+
 			<div class="site-info">
-				&copy; 2015 <a href="http://wpmeetups.de/impressum">Impressum</a> | <a href="http://wpmeetups.de/datenschutz">Datenschutz</a>
+				&copy; 2012-2016 krafit.de - Simon Kraft | <a href="https://wpmeetups.de/impressum">Impressum</a> | <a href="https://wpmeetups.de/datenschutz">Datenschutz</a>
 			</div><!-- .site-info -->
 		</div>
 	</footer><!-- #colophon -->
