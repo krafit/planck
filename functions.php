@@ -137,5 +137,10 @@ require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
+ * Custom functions for The Events Calendar, if the Plugin is active.
+ */
+if (class_exists('Tribe__Events__Main')) { 
+	require get_template_directory() . '/inc/the-events-calendar.php';
+}
  */
 require get_template_directory() . '/inc/jetpack.php';
