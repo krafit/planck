@@ -115,10 +115,6 @@ function krafit_planck_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'krafit_planck_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -136,11 +132,9 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Load Jetpack compatibility file.
  * Custom functions for The Events Calendar, if the Plugin is active.
  */
 if (class_exists('Tribe__Events__Main')) { 
 	require get_template_directory() . '/inc/the-events-calendar.php';
 }
  */
-require get_template_directory() . '/inc/jetpack.php';
