@@ -85,7 +85,7 @@ function krafit_planck_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'krafit_planck' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="column fourth widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="column fourth widget footer-row %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
@@ -139,4 +139,8 @@ require get_template_directory() . '/inc/customizer.php';
 if (class_exists('Tribe__Events__Main')) { 
 	require get_template_directory() . '/inc/the-events-calendar.php';
 }
+
+/**
+ * Custom widgets.
  */
+require get_template_directory() . '/inc/widgets.php';
