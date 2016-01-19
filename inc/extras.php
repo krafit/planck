@@ -56,3 +56,20 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	}
 	add_filter( 'wp_title', 'krafit_planck_wp_title', 10, 2 );
 endif;
+
+
+
+/**
+ * Customize the Excerpt length
+ */
+function krafit_planck_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'krafit_planck_excerpt_length', 999 );
+
+
+
+/**
+ * Allow Shortcodes in Text Widgets
+ */
+add_filter('widget_text', 'do_shortcode');
