@@ -41,6 +41,7 @@ function krafit_planck_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+		add_image_size( 'meetup-logo', 170, 170, true ); // Meetup Logo, hard crop mode
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
