@@ -1,9 +1,16 @@
-.single-meetup main > *,
-.post-type-archive-meetup main > * {
-	padding: 0;
-}
 .single-meetup main > * {
 	background-color: $color__background-meetup-sidebar; 
+}
+
+.post-type-archive-meetup {
+	
+	main > .page-header {
+		padding: 0 1.5em;
+		
+		@include responsive(medium-screens) {
+			padding: 0;
+		}
+	}
 }
 
 .single-meetup {
@@ -12,6 +19,7 @@
 		border-top: none;
 		border-bottom: 1px solid $color__background-meetup-sidebar; // fix for flaky 1px gap
 	}
+	
 	article {
 		margin-bottom: 0;
 	}
@@ -26,26 +34,32 @@
 .meetup-sidebar {
 	background-color: $color__background-meetup-sidebar;
 	padding: 3.7em;
+	
 	li {
+		border-bottom: 1px $color__border solid;
 		text-align: center;
 		@include font-size (0.9);
 		padding: .6em 0 .4em;
+		
 		span {
 			display: block;
 			margin: 0 auto 4px;
 			font-size: 170%;
 		}
+		
 		img {
 			margin: 0 auto;
 			display: block;
 		}
-		border-bottom: 1px $color__border solid;
+		
 		&:first-child {
 			border-top: 1px $color__border solid;
 		}
+		
 		a, a:visited {
 			color: $color__text-meetup-sidebar;
 		}
+		
 		a:hover {
 			color: $color__text-meetup-sidebar;
 		}
@@ -61,6 +75,7 @@
 	.meetup-main {
 		padding: 3.7em 5.9em;
 	}
+	
 	.meetup-sidebar {
 		padding: 3.7em 4.5em;
 	}
@@ -88,9 +103,11 @@
 .single-events-list,
 .global-events-list {
 	margin: 4em 0;
+	
 	.row .column:nth-child(2), .row .column:nth-child(2) h5 {
 		text-align: right;
 	}
+	
 	h5 {
 		font-weight: 600;
 		text-transform: uppercase;
@@ -98,11 +115,14 @@
 		@include font-size(0.75);
 		letter-spacing: 1px;
 	}
+	
 	ul.ecs-event-list {
 		padding-top: .4em;
 		clear: both;
+		
 		li {
 			border-bottom: 4px $color__border solid;
+			
 			&:first-child {
 				border-top: 4px $color__border solid;
 			}
@@ -121,6 +141,7 @@
 	.entry-title a {
 		margin: 0;
 		color: $color__primary;
+		
 		&:hover {
 			color: $color__primary__dark;
 		}
@@ -132,31 +153,31 @@
 	}
 }
 
-
-
 section.global-events-list {
 	margin: 0 1.5rem;
 	padding: 2.8rem 0 2rem !important;
+	
 	h5 {
 		color: white;
-		// font-size: 120%;
-		a, a:visited {
+
+		a, 
+		a:visited {
 			color: $color__primary;
 		}
 	}
+	
 	li.ecs-event {
 		background-color: white;
 		border-bottom: none;
 		border-top: 4px $color__border solid;
 		margin-bottom: 1em;
-		padding: 1em 1.3em;
+		padding: .4em 1.3em .7em;
 	}
 }
 
 .ecs-event-list .duration {
 	@include font-size(1.37);
 }
-
 
 @include responsive (medium-screens) {
 	section.global-events-list {
@@ -170,25 +191,27 @@ section.global-events-list {
 	h4 {
 		margin: .25rem 0 .1rem;
 	}
+	
 	section.global-events-list {
 		margin: 0;
 		padding: 0!important;
 	}
+	
 	.tribe-events-list-separator-month {
 		margin-top: 1.5rem;
 		display: inline-block;
 	}
+	
 	.tribe-events-event-meta {
 		margin-bottom: 1.5rem;
 	}
-
 }
-
 
 .post-type-archive-meetup {
 	header {
 		margin-bottom: 1em;
 	}
+	
 	h1.page-title {
 		color: white;
 		@include font-size(0.8);
@@ -201,31 +224,51 @@ section.global-events-list {
 
 .meetup-wrap {
 	margin-top: 0;
+	padding: 0;
+	
+	@include responsive(medium-screens) {
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin: 0 auto;
+	}
 }
 
 .meetup-card {
 	border-top: 6px $color__border solid;
 	background-color: white;
-	padding: 2.7em;
+	padding: 1.5em;
 	overflow: hidden;
+	
+	@include responsive(medium-screens) {
+		padding: 2.7em;
+		flex: 0 1 47.5%;
+	}
+	
 	h2 {
 		margin: 0 0 .2em;
 		@include font-size(1.2);
 		font-weight: 600;
 		text-transform: uppercase;
+		
 		a, a:visited { 
 			color: $color__primary;
 		}
-
 	}
-	p, .entry-content {
+	
+	p, 
+	.entry-content {
 		margin: 0;
 		color: #444444;
 	}
+	
+	&:last-child {
+		
+	}
 }
 
-// Events 
-
+// Events
 .events-list article .type-tribe_events {
 	border-top: 4px $color__border solid;
 }
@@ -235,10 +278,12 @@ h3.event-preheader {
 	@include font-size(0.95);
 	font-weight: 600;
 	text-transform: uppercase;
+	
 	a, a:visited {
 		color: $color__text-pre-headline;
 	}
 }
+
 h1.tribe-events-single-event-title {
 	margin-bottom: 0;
 }

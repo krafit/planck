@@ -4,6 +4,7 @@
 	padding: .75rem 0;
 	vertical-align: middle;
 	border-top: solid $color__primary 20px;
+	
 	& > .wrap > * {
 		line-height: 3rem;
 	}
@@ -13,17 +14,18 @@
 	@include font-size(0.8);
 }
 
-
 @include responsive(small-screens) {
 	.site-footer {
 		margin-top: 4em;
 	}
+	
 	.site-info {
 		text-align: left;
 		float: left;
 		width: 40%;
 		display: inline-block;
 	}
+	
 	.footer-navigation {
 		float: right;
 		text-align: right;

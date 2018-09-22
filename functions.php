@@ -108,8 +108,6 @@ function krafit_planck_scripts() {
 	
 	wp_enqueue_script( 'krafit_planck-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'krafit_planck-equalheight', get_template_directory_uri() . '/assets/js/equalheight.js', array(), '20150922', true );
-
 	wp_enqueue_script( 'krafit_planck-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

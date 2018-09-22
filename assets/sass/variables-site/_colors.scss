@@ -3,12 +3,11 @@ $color__secondary: #282828;
 $color__tertiary: #fff;
 $color__generic__black: #000;
 
-$color__primary__light: lighten( $color__primary, 3% );
-$color__secondary__light: lighten( $color__secondary, 3% );
+$color__primary__light: lighten( $color__primary, 5% );
+$color__secondary__light: lighten( $color__secondary, 5% );
 $color__primary__dark: darken( $color__primary, 3% );
 $color__secondary__dark: darken( $color__secondary, 3% );
 $color__soft_black: lighten( $color__generic__black, 80% );
-
 
 $color__background-body: $color__secondary;
 $color__background-header: $color__primary; 
@@ -27,6 +26,7 @@ $color__text-input-focus: #111; //
 $color__link: $color__primary;
 $color__link-visited: $color__primary;
 $color__link-hover: $color__secondary__dark;
+$color__link-hover-alt: $color__primary__light;
 $color__text-header: $color__tertiary;
 $color__text-header_hover: $color__tertiary;
 $color__text-main: #777;

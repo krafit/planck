@@ -19,6 +19,7 @@
 	text-align: center;
 	@include font-size(1.5);
 	@include transition(all, 0.0s, linear);
+	
 	& a {
 		text-decoration: none;
 		vertical-align: middle;
@@ -32,12 +33,13 @@
 		width: 40%;
 		display: inline-block;
 	}
+	
 	.site-title {
 		text-align: left;
 	}
+	
 	.main-navigation {
 		float: right;
 		width: 58%;
 	}
 }
-
