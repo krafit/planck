@@ -3,9 +3,9 @@
 Contributors: krafit
 Tags: translation-ready, theme-options, custom-menu, threaded-comments
 
-Requires at least: 4.2
-Tested up to: 4.4.1
-Stable tag: 2.0
+Requires at least: 4.0
+Tested up to: 4.2.4
+Stable tag: 0.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,12 +24,13 @@ Say hello to Planck. Planck is the new theme for wpmeetups.de - the germanophon 
 
 = Does this theme support any plugins? =
 
-* The Events Calendar
+There will be support for the "The Events Calendar" Plugin soon!
 
 == Changelog ==
 
-= 2.0 - October 15 2015 =
+= 0.1 - August 10 2015 =
 * Initial version
+* first preview
 
 == Credits ==
 

@@ -7,6 +7,20 @@
  * @package krafit_planck
  */
 
+if (!function_exists('write_log')) {
+    function write_log ( $log )  {
+        if ( true === WP_DEBUG ) {
+            if ( is_array( $log ) || is_object( $log ) ) {
+                error_log( print_r( $log, true ) );
+            } else {
+                error_log( $log );
+            }
+        }
+    }
+}
+
+
+
 if ( ! function_exists( 'krafit_planck_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -133,13 +147,117 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Custom functions for The Events Calendar, if the Plugin is active.
- */
-if (class_exists('Tribe__Events__Main')) { 
-	require get_template_directory() . '/inc/the-events-calendar.php';
-}
-
-/**
  * Custom widgets.
  */
 require get_template_directory() . '/inc/widgets.php';
+
+
+/**
+ * Method of listing upcoming events, complete with functional pagination
+ * if WP-PageNavi is installed.
+ *
+ * Implemented as a shortcode.
+ *
+ * @see https://wordpress.org/plugins/wp-pagenavi/
+ */
+function krafit_planck_meetup_list() {
+	// Safety first! Bail in the event TEC is inactive/not loaded yet
+				
+	$date  = get_post_meta( get_the_ID(), 'meetup_event_timestamp', true );
+	
+	// Build our query, adopt the default number of events to show per page
+	$upcoming = new WP_Query( array(
+		'post_type' => 'events',
+		'posts_per_page' => '9',
+		'order' => 'ASC',
+		'orderby' => 'meta_value',
+		'meta_key' => 'meetup_event_timestamp'
+	) );
+
+	
+
+	echo '<ul class="ecs-event-list">';
+	// If we got some results, let's list 'em
+	while ( $upcoming->have_posts() ) {
+		$upcoming->the_post();
+		$title = get_the_title();
+		$link = get_post_meta( get_the_ID(), 'meetup_event_url', true );
+		$term_obj_list = get_the_terms( $post->ID, 'meetup-group' );
+		$group = join(', ', wp_list_pluck($term_obj_list, 'name'));
+		$group_slug = join(', ', wp_list_pluck($term_obj_list, 'slug'));
+		
+		// Of course, you could and probably would expand on this
+		// and add more info and better formatting
+		echo '<li class="ecs-event">';
+
+		echo '<span class="event-preheader"><a href="https://wpmeetups.de/meetup/' . $group_slug . '">' . $group . '</a></span>';
+		echo '<h4 class="entry-title summary"><a href="'. $link . '">' . $title . '</a></h4>';
+		echo '<span class="duration time"><span class="tribe-event-date-start">' . get_post_meta( get_the_ID(), 'meetup_event_date', true ) . ' | ' . get_post_meta( get_the_ID(), 'meetup_event_time', true ) . '</span></span></li>';
+	}
+	echo '</ul>';
+	
+		
+	// Clean up
+	wp_reset_query();
+}
+
+/**
+ * Method of listing upcoming events, complete with functional pagination
+ * if WP-PageNavi is installed.
+ *
+ * Implemented as a shortcode.
+ *
+ * @see https://wordpress.org/plugins/wp-pagenavi/
+ */
+function krafit_planck_meetup_shortlist() {
+	// Safety first! Bail in the event TEC is inactive/not loaded yet
+				
+	$date  = get_post_meta( get_the_ID(), 'meetup_event_timestamp', true );
+	
+	// Build our query, adopt the default number of events to show per page
+	$upcoming = new WP_Query( array(
+		'post_type' => 'events',
+		'posts_per_page' => '5',
+		'order' => 'ASC',
+		'orderby' => 'meta_value',
+		'meta_key' => 'meetup_event_timestamp'
+	) );
+
+	
+
+	echo '<ol class="hfeed vcalendar">';
+	// If we got some results, let's list 'em
+	while ( $upcoming->have_posts() ) {
+		$upcoming->the_post();
+		$link = get_post_meta( get_the_ID(), 'meetup_event_url', true );
+		$term_obj_list = get_the_terms( $post->ID, 'meetup-group' );
+		$group = join(', ', wp_list_pluck($term_obj_list, 'name'));
+		
+		// Of course, you could and probably would expand on this
+		// and add more info and better formatting
+		echo '<li class="tribe-events-list-widget-events">';
+
+		echo '<span class="event-preheader"><a href="'. $link . '">' . $group . '</a></span><br>';
+		echo '<span class="duration time"><span class="tribe-event-date-start">' . get_post_meta( get_the_ID(), 'meetup_event_date', true ) . '</span></span></li>';
+	}
+	echo '</ol>';
+	
+		
+	// Clean up
+	wp_reset_query();
+}
+
+// Create a new shortcode to list upcoming events, optionally
+// with pagination
+add_shortcode( 'meetup-liste', 'krafit_planck_meetup_list' );
+
+function my_cptui_change_posts_per_page( $query ) {
+    if ( is_admin() || ! $query->is_main_query() ) {
+       return;
+    }
+
+    if ( is_post_type_archive( 'meetup' ) ) {
+       $query->set( 'posts_per_page', 100 );
+    }
+}
+add_filter( 'pre_get_posts', 'my_cptui_change_posts_per_page' );

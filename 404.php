@@ -7,6 +7,9 @@
  * @package krafit_planck
  */
 
+write_log('Eine Fehlerseite wurde aufgerufen');
+
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">
