@@ -4,8 +4,8 @@ Contributors: krafit
 Tags: translation-ready, theme-options, custom-menu, threaded-comments
 
 Requires at least: 4.0
-Tested up to: 4.2.4
-Stable tag: 0.1
+Tested up to: 4.6
+Stable tag: 2.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,13 +20,11 @@ Say hello to Planck. Planck is the new theme for wpmeetups.de - the germanophon 
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Frequently Asked Questions ==
-
-= Does this theme support any plugins? =
-
-There will be support for the "The Events Calendar" Plugin soon!
-
 == Changelog ==
+
+= 2.1 – December 19 2020 =
+* Switch to new events plugin
+* Tested up to WP 5.6
 
 = 0.1 - August 10 2015 =
 * Initial version
