@@ -19,7 +19,7 @@
 <?php get_sidebar(); ?>
 
 			<div class="site-info">
-				&copy; 2012-2020 Simon Kraft | <a href="https://wpmeetups.de/impressum">Impressum</a> | <a href="https://wpmeetups.de/datenschutz">Datenschutz</a>
+				&copy; 2012-2021 Simon Kraft | <a href="https://wpmeetups.de/impressum">Impressum</a> | <a href="https://wpmeetups.de/datenschutz">Datenschutz</a>
 			</div><!-- .site-info -->
 		</div>
 	</footer><!-- #colophon -->
