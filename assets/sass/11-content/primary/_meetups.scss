@@ -6,22 +6,22 @@
 	margin-right: 5px;
 	padding: 0 8px;
 	border-radius: 6px;
-	.meetup-status.aktiv {
+	.aktiv {
 		background-color: $color__primary;
 	}
-	.meetup-status.Planung {
+	.Planung {
 		background-color: $color__secondary;
 	}
-	.meetup-status.inaktiv {
+	.inaktiv {
 		background-color: $color__tertiary;
 	}
-	.meetup-modus.online {
+	.online {
 		background-color: $color__primary;
 	}
-	.meetup-modus.pausiert {
+	.pausiert {
 		background-color: $color__secondary;
 	}
-	.meetup-modus.offline {
+	.offline {
 		background-color: $color__tertiary;
 	}
 }
