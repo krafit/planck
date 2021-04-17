@@ -51,16 +51,16 @@ global $post; $post_slug=$post->post_name;
 						<div class="single-events-list">
 							<div class="row">
 								<div class="column half no-margin"><h5>Nächste WP Meetups</h5></div>
-								<div class="column half no-margin"><?php if ( is_user_logged_in() ) : ?><h5><a href="">Alle Termine zeigen</a></h5><?php endif; ?></div>
 							</div>
 						
 							<ul class="ecs-event-list">
 							<?php 
 							foreach ( $dates as $post ) : 
 							        setup_postdata( $post );
+							        $link = get_post_meta( get_the_ID(), 'meetup_event_url', true );
 							        ?>
 							        <li class="ecs-event">
-							        	<a href="<?php the_permalink(); ?>"><h4 class="entry-title summary"><?php the_title(); ?></h4></a>
+							        	<a href="<?php echo $link; ?>"><h4 class="entry-title summary"><?php the_title(); ?></h4></a>
 							        	<span class="duration time"><span class="tribe-event-date-start"><?php echo get_post_meta( get_the_ID(), 'meetup_event_date', true ) . ' | ' . get_post_meta( get_the_ID(), 'meetup_event_time', true ); ?></span>
 							        </li>
 							        <?php
