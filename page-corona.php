@@ -44,6 +44,7 @@ get_header(); ?>
 						<a class="meetup-label bonn" href="https://wpmeetups.de/meetup/bonn/">Bonn</a>
 						<a class="meetup-label bremen inaktiv" href="https://wpmeetups.de/meetup/bremen/">Bremen</a>
 						<a class="meetup-label dortmund inaktiv" href="https://wpmeetups.de/meetup/dortmund/">Dortmund</a>
+						<a class="meetup-label dresden" href="https://wpmeetups.de/meetup/dresden/">Dresden</a>
 						<a class="meetup-label duesseldorf" href="https://wpmeetups.de/meetup/duesseldorf/">Düsseldorf</a>
 						<a class="meetup-label frankfurt inaktiv" href="https://wpmeetups.de/meetup/frankfurt/">Frankfurt</a>
 						<a class="meetup-label hamburg inaktiv" href="https://wpmeetups.de/meetup/hamburg/">Hamburg</a>
