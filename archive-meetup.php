@@ -25,6 +25,25 @@ get_header(); ?>
 				<article id="post-<?php the_ID(); ?>" class="column half meetup-card">
 					<header class="entry-header">
 						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+
+						<div class="meta-info">
+							<?php $terms = get_the_terms( $post->ID, 'meetup_status' );
+							if( $terms ){
+								$term = array_shift( $terms ); // get first
+
+								// now you can display the name of the term
+								echo '<span class="meetup-status ' . $term->name . '">' . $term->name .'</span>';
+							}
+
+							$terms = get_the_terms( $post->ID, 'meetup_modus' );
+							if( $terms ){
+								$term = array_shift( $terms ); // get first
+
+								// now you can display the name of the term
+								echo '<span class="meetup-modus ' . $term->name . '">' . $term->name .'</span>';
+							}
+							?>
+						</div>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
