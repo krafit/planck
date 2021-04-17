@@ -7,20 +7,6 @@
  * @package krafit_planck
  */
 
-if (!function_exists('write_log')) {
-    function write_log ( $log )  {
-        if ( true === WP_DEBUG ) {
-            if ( is_array( $log ) || is_object( $log ) ) {
-                error_log( print_r( $log, true ) );
-            } else {
-                error_log( $log );
-            }
-        }
-    }
-}
-
-
-
 if ( ! function_exists( 'krafit_planck_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -114,7 +100,7 @@ add_action( 'widgets_init', 'krafit_planck_widgets_init' );
  * Enqueue scripts and styles.
  */
 function krafit_planck_scripts() {
-	wp_enqueue_style( 'krafit_planck-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'planck-style', get_template_directory_uri() . '/style.min.css' );
 
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,300,600' );
 
