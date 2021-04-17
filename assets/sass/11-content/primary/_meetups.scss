@@ -2,6 +2,30 @@
 	background-color: $color__background-meetup-sidebar; 
 }
 
+.meta-info span {
+	margin-right: 5px;
+	padding: 0 8px;
+	border-radius: 6px;
+	.meetup-status.aktiv {
+		background-color: $color__primary;
+	}
+	.meetup-status.Planung {
+		background-color: $color__secondary;
+	}
+	.meetup-status.inaktiv {
+		background-color: $color__tertiary;
+	}
+	.meetup-modus.online {
+		background-color: $color__primary;
+	}
+	.meetup-modus.pausiert {
+		background-color: $color__secondary;
+	}
+	.meetup-modus.offline {
+		background-color: $color__tertiary;
+	}
+}
+
 .post-type-archive-meetup {
 	
 	main > .page-header {
