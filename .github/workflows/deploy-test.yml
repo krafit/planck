@@ -1,10 +1,10 @@
-name: deploy
+name: deploy to test
 on:
   # Trigger the workflow on push,
-  # but only for the main branch
+  # but only for the update branch
   push:
     branches:
-      - main
+      - update
 jobs:
   run:
     name: deploy
@@ -31,5 +31,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
       # Transfer file to remote server
-      - run: ssh ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} "mkdir -p ${{ secrets.REMOTE_PATH_BASE }}"
-      - run: rsync -ahv * ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{ secrets.REMOTE_PATH_BASE }}
+      - run: ssh ${{ secrets.REMOTE_USER_TEST }}@${{ secrets.REMOTE_HOST }} "mkdir -p ${{ secrets.REMOTE_PATH_BASE_TEST }}"
+      - run: rsync -ahv * ${{ secrets.REMOTE_USER_TEST }}@${{ secrets.REMOTE_HOST }}:${{ secrets.REMOTE_PATH_BASE_TEST }}
