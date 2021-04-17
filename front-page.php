@@ -41,7 +41,6 @@ get_header(); ?>
 				<section class="global-events-list" id="events-section">
 					<div class="row">
 						<div class="column half no-margin"><h5>Aktuelle Meetup Termine</h5></div>
-						<div class="column half no-margin"><?php if ( is_user_logged_in() ) : ?><h5><a href="https://wpmeetups.de/termine/">Alle Termine zeigen</a></h5><?php endif; ?></div>
 					</div>
 					<?php krafit_planck_meetup_list(); ?>
 				</section> <!-- .global-events-list -->
